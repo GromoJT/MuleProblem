@@ -1,0 +1,31 @@
+{
+  "baseItems": [
+    {
+      "itemId": 0,
+      "itemRarity": "uncommon",
+      "itemName": "Miecz",
+      "itemWeight": 1.2,
+      "itemSize": 0.5,
+      "itemValue": 5.2,
+      "itemRisk": 0.4
+    },
+    {
+      "itemId": 1,
+      "itemRarity": "uncommon",
+      "itemName": "Tarcza",
+      "itemWeight": 2.6,
+      "itemSize": 2.8,
+      "itemValue": 3.2,
+      "itemRisk": 0.2
+    },
+    {
+      "itemId": 2,
+      "itemRarity": "common",
+      "itemName": "Tarcza",
+      "itemWeight": 2.6,
+      "itemSize": 2.8,
+      "itemValue": 3.2,
+      "itemRisk": 0.2
+    }
+  ]
+}

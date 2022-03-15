@@ -1,0 +1,44 @@
+{
+  "mod1": [
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+        {
+      "modId": 1,
+      "modName": "Uncommon",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.2,
+      "modRisk": 1.1
+    },
+    {
+      "modId": 2,
+      "modName": "Rare",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.5,
+      "modRisk": 1.4
+    },
+    {
+      "modId": 3,
+      "modName": "Epic",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 2.0,
+      "modRisk": 2.1
+    },
+    {
+      "modId": 4,
+      "modName": "Legendary",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 4.0,
+      "modRisk": 5.0
+    }
+  ]
+}

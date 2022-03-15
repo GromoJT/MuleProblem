@@ -1,0 +1,159 @@
+{
+  "mod2": [
+    {
+      "modId": 0,
+      "modRarity": "normal",
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+        {
+      "modId": 1,
+      "modRarity": "rare",
+      "modName": "Nice",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.2,
+      "modRisk": 1.1
+    },
+    {
+      "modId": 2,
+      "modRarity": "rare",
+      "modName": "Big",
+      "modWeight":1.2,
+      "modSize": 1.5,
+      "modValue": 1.0,
+      "modRisk": 1.1
+    },{
+      "modId": 3,
+      "modRarity": "rare",
+      "modName": "Small",
+      "modWeight":0.9,
+      "modSize": 0.8,
+      "modValue": 1.0,
+      "modRisk": 0.9
+    },{
+      "modId": 4,
+      "modRarity": "rare",
+      "modName": "Smelly",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 0.7,
+      "modRisk": 1.1
+    },{
+      "modId": 5,
+      "modRarity": "normal",
+      "modName": "Broken",
+      "modWeight":0.9,
+      "modSize": 1.0,
+      "modValue": 0.2,
+      "modRisk": 0.8
+    },{
+      "modId": 6,
+      "modRarity": "rare",
+      "modName": "Beautiful",
+      "modWeight":1.1,
+      "modSize": 1.0,
+      "modValue": 1.7,
+      "modRisk": 1.3
+    },{
+      "modId": 7,
+      "modRarity": "rare",
+      "modName": "Ugly",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 0.5,
+      "modRisk": 0.8
+    },{
+      "modId": 8,
+      "modRarity": "rare",
+      "modName": "Cursed",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.4,
+      "modRisk": 3.0
+    },{
+      "modId": 9,
+      "modRarity": "epic",
+      "modName": "Magical",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 2.0,
+      "modRisk": 1.7
+    },
+    {
+      "modId": 10,
+      "modRarity": "epic",
+      "modName": "Golden",
+      "modWeight":4.0,
+      "modSize": 1.0,
+      "modValue": 3.0,
+      "modRisk": 1.9
+    },
+    {
+      "modId": 11,
+      "modRarity": "epic",
+      "modName": "Powerful",
+      "modWeight":1.6,
+      "modSize": 1.6,
+      "modValue": 1.9,
+      "modRisk": 1.6
+    },
+    {
+      "modId": 12,
+      "modRarity": "legendary",
+      "modName": "Godlike",
+      "modWeight":1.5,
+      "modSize": 1.5,
+      "modValue": 4.2,
+      "modRisk": 2.1
+    },
+    {
+      "modId": 13,
+      "modRarity": "rare",
+      "modName": "Shiny",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.5,
+      "modRisk": 1.2
+    },
+    {
+      "modId": 14,
+      "modRarity": "epic",
+      "modName": "Bloody",
+      "modWeight":1.2,
+      "modSize": 1.0,
+      "modValue": 2.2,
+      "modRisk": 2.0
+    },
+    {
+      "modId": 15,
+      "modRarity": "legendary",
+      "modName": "Holy",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 5.3,
+      "modRisk": 3.7
+    },
+    {
+      "modId": 16,
+      "modRarity": "common",
+      "modName": "Dirty",
+      "modWeight":1.3,
+      "modSize": 1.1,
+      "modValue": 0.9,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 17,
+      "modRarity": "rare",
+      "modName": "Amazing",
+      "modWeight":1.1,
+      "modSize": 1.0,
+      "modValue": 1.6,
+      "modRisk": 1.2
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import json
 import random
-
+import time
 
 
 
@@ -10,6 +10,9 @@ i=0
 HM = []
 HMV = []
 
+HM_temp = []
+HMV_temp = []
+
 ids = []
 nam = []
 wei = []
@@ -17,7 +20,7 @@ siz = []
 val = []
 ris = []
 
-
+p2 = 500000
 
 with open('wynik.json') as f:
     data = json.load(f)
@@ -29,7 +32,7 @@ for item in data['items']:
     val.append(item['value'])
     ris.append(item['risk'])
 
-#print(ids)
+print(len(ids))
 #print(nam)
 #print(wei)
 #print(siz)
@@ -45,8 +48,8 @@ for item in data['items']:
 
 while i < hmSize:
     #print("TEST")
-    udzwig = 150.0
-    gabaryt = 150.0
+    udzwig = 50.0
+    gabaryt = 50.0
 
     k_udz = 0.0
     k_gab = 0.0
@@ -84,7 +87,7 @@ while i < hmSize:
             k_val = k_val + val[r]
             k_ryz = k_ryz + ris[r]
             
-            fin = k_val / k_ryz
+            fin = (k_val / k_ryz)*100
             
             
             
@@ -101,20 +104,22 @@ while i < hmSize:
     
     HM.append(ids2)
     HMV.append(fin)
-
-
-
+    HM_temp.append(ids2)
+    HMV_temp.append(fin)
 #print(HM)
 print(HMV)
 
-koniec=False
-ilosc_prob_2 = 5000000
+print("-----------||--------------")   
 
+koniec=False
+ilosc_prob_2 = p2
+zmiany=0
+start = time.time()
 while koniec!=True:
+     
     
-    
-    udzwig = 150.0
-    gabaryt = 150.0
+    udzwig = 50.0
+    gabaryt = 50.0
 
     k_udz = 0.0
     k_gab = 0.0
@@ -152,7 +157,7 @@ while koniec!=True:
             k_val = k_val + val[r]
             k_ryz = k_ryz + ris[r]
             
-            fin = k_val / k_ryz
+            fin = (k_val / k_ryz)*100
             
             
         else:
@@ -166,8 +171,10 @@ while koniec!=True:
        if(fin>HMV[o]):
            HMV[o]=fin
            HM[o]=ids2
-           #print("zmiana!")
-           #print(ilosc_prob_2)
+           print("zmiana!")
+           print(ilosc_prob_2)
+           zmiany=zmiany+1
+           ilosc_prob_2 = p2
            break
        else:
            ilosc_prob_2=ilosc_prob_2-1
@@ -176,7 +183,14 @@ while koniec!=True:
        o=o+1
     if ilosc_prob_2<=0:
         koniec = True
-#print(HM)
+end = time.time()
+print(" ")
+print(HMV_temp)
+print(" --- | | ---")
 print(HMV)
-        
+print(" ")
+print("Iloć zmian: "+str(zmiany))
+print(" ")
+print("Czasz szukania:")
+print(end-start)
 

@@ -4,23 +4,41 @@ import time
 
 
 
-
+#   hmSize to wielkoć pamięci 
 hmSize = 15
+
+#   Stałe do resetu danych
+
+F_udzwig = 50
+F_gabaryt =50
+
+#   inicjowanie zmiennych programowych
 i=0
 HM = []
 HMV = []
 
+#   Zmienne pomocnicze do późniejszego wywietlania
 HM_temp = []
 HMV_temp = []
 
-ids = []
-nam = []
-wei = []
-siz = []
-val = []
-ris = []
+#   Tablice z zmiennymi do wygenerowania podstawowej pamięci
+ids = []    #   Tablica id przedmiotów
+nam = []    #   Tablica nazw przedmiotów
+wei = []    #   Tablica wagi przedmiotów
+siz = []    #   Tablica rozmiaru przedmiotów
+val = []    #   Tablica wartosci przedmiotów
+ris = []    #   Tablica ryzyka przedmiotów
 
+#   p2 okrela iloć prób jaką będzie wykonywać pętla BRUTEFORCE jesli 
+#   znajdzie dobre rozwiązanie to powraca do wartosci poczatkowej, 
+#   gdy natomiast w trakcie wielokrotnej iteracji nie znajdzie
+#   satysfakconującej odpowiedzi pula
+#   się wyczerpie i zakonczy działanie petli
 p2 = 500000
+
+
+#   Otwarcie pliku z lista przedmiotow 'wynik.json', oraz załadowanie jego 
+#   poszczególnych elementów do odpowiedznich tablic pomocniczych
 
 with open('wynik.json') as f:
     data = json.load(f)
@@ -32,25 +50,13 @@ for item in data['items']:
     val.append(item['value'])
     ris.append(item['risk'])
 
-print(len(ids))
-#print(nam)
-#print(wei)
-#print(siz)
-#print(val)
-#print(ris)
-#print(len(ids))
 
-
-
-
-
-
-
+#   Pętla generująca podstawową pamięć HM
 while i < hmSize:
-    #print("TEST")
-    udzwig = 50.0
-    gabaryt = 50.0
-
+    
+    #   Resetowanie parametrów iteracyjnych
+    udzwig = F_udzwig # Udźwig muła w aktualnej iteracji
+    gabaryt = F_gabaryt #   Pojemnosc 
     k_udz = 0.0
     k_gab = 0.0
     k_val = 0.0

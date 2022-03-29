@@ -120,7 +120,34 @@ while koniec!=True:
     r_HMCR = random.randint(0,100)
     
     if(r_HMCR < HMCR):
+        #print(str(HM[0][0]) + " = " + str(HMV[0]))
+        print(str(len(HM))+" = len of HM")
+        i=0
+        z=9999
+        m=0
+        while i < hmSize:
+            print(str(len(HM[i]))+" = len of HM["+str(i)+"]")
+            if len(HM[i]) < z:
+                z = len(HM[i])
+            if len(HM[i]) > m:
+                m = len(HM[i])
+            i=i+1
+        print("m = "+str(m))
+        print("z = "+str(z))
+            
+        r_len = random.randint(z, m)
+        print(str(r_len))
         
+        u=0
+        p=0
+        HMI_TEST = []
+        while p < r_len:
+            r_k = random.randint(0, hmSize)
+            print(str(r_k))
+            if(HM[r_k][u]!=None):
+                HMI_TEST.append(HM[r_k][u])
+                p=p+1
+        print(HMI_TEST)
         
     else:
         while dalej:

@@ -13,7 +13,7 @@ HMV = []
 #Procent szans na mutacje
 HMCR = 70
 #czas przez jaki będzie działał program 
-czas_dzialania = 60
+czas_dzialania = 5
 
 #tymczasowe tablice do transferu danych
 HM_temp = []
@@ -171,7 +171,7 @@ while koniec!=True:
             #-- Ustawienie aby nowe rozwiazanie które skłąda się z już istniejących musiało być
             #-- tak samo długie jak najmniejsze czy największe. Spowodowało by trudnoć z znalezieniem
             #-- w puli optymalnych kombinacji.
-            #-- Dlatego postawilimy na lepy traf i długoć tego rozwiażania jest ograniczana 
+            #-- Dlatego postawilimy na slepy traf i długosć tego rozwiażania jest ograniczana 
             #-- do wartoći pomiędzy tymi dwiema skrajnymi
             i=0
             z=9999
@@ -267,6 +267,9 @@ while koniec!=True:
                 ind = HMV.index(temp_min)
                 
                 if(fin>HMV[ind]):
+                    print("udzwig i gab")
+                    print(k_udz)
+                    print(k_gab)
                     print("zamiana!")
                     HMV[ind] = fin
                     HM[ind] = HMI_TEST

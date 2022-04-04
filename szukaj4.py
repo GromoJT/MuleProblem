@@ -13,7 +13,7 @@ HMV = []
 #Procent szans na mutacje
 HMCR = 70
 #czas przez jaki będzie działał program 
-czas_dzialania = 10
+czas_dzialania = 60
 
 #tymczasowe tablice do transferu danych
 HM_temp = []
@@ -157,6 +157,7 @@ while koniec!=True:
     
     #pozycja decyzyjna czy program mutuje czy odwieża pulę 
     if(r_HMCR < HMCR):
+        print("pamiec")
         #ustawienie flagi mutacji tablicy 
         zamiana = True
         while zamiana:
@@ -179,6 +180,7 @@ while koniec!=True:
             indexes = []
             
             while i < hmSize:
+                
                 #print(str(len(HM[i]))+" = len of HM["+str(i)+"]")
                 if len(HM[i]) < z:
                     z = len(HM[i])
@@ -265,16 +267,16 @@ while koniec!=True:
                 ind = HMV.index(temp_min)
                 
                 if(fin>HMV[ind]):
-                    print("zamiana")
+                    print("zamiana!")
                     HMV[ind] = fin
                     HM[ind] = HMI_TEST
                     zamiana = False
                     break
                 else:
-                    print("Braki zamiany")
+                    print("Braki zamiany1")
                     break
             else:
-                print("Braki zamiany")
+                print("Braki zamiany2")
                 break
             
             
@@ -302,20 +304,23 @@ while koniec!=True:
                 k_val = k_val + val[r]
                 k_ryz = k_ryz + ris[r]
                 
-                fin = (k_val / k_ryz)*100
+                fin = (k_val / k_ryz)*100  - (gabaryt*udzwig*10)
                 
                 
             else:
-                dalej = False
+                break
                     
         temp_min = min(HMV)
         ind = HMV.index(temp_min)
-        print(ind)
+        #print(ind)
         if(fin>HMV[ind]):
             HMV[ind] = fin
             HM[ind] = ids2
+            print("zamiana sila")
+            dalej = False
             
         else:
+            print("sila jescze raz!")
             continue
         
 print(HMV_temp)

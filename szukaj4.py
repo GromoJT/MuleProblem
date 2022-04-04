@@ -13,7 +13,7 @@ HMV = []
 #Procent szans na mutacje
 HMCR = 70
 #czas przez jaki będzie działał program 
-czas_dzialania = 15
+czas_dzialania = 10
 
 #tymczasowe tablice do transferu danych
 HM_temp = []
@@ -95,7 +95,7 @@ while i < hmSize:
             k_val = k_val + val[r]
             k_ryz = k_ryz + ris[r]
             
-            fin = (k_val / k_ryz)*100 - ((udzwig-k_udz)+(gabaryt-k_gab)*150)
+            fin = (k_val / k_ryz)*100  - (gabaryt*udzwig*10)
             
             
             
@@ -230,6 +230,7 @@ while koniec!=True:
                             print("HM["+ str(p%len(HM))+"][" + str(nr) +"] = "+ str(HM[p%len(HM)][nr]))
                             if(HM[p%len(HM)][nr] in HMI_TEST):
                                 print("POWTÓRKA 2 ")
+                                p=p+1
                                 break
                             else:
                                 HMI_TEST.append(HM[p%len(HM)][nr])
@@ -257,9 +258,9 @@ while koniec!=True:
                 k_val = k_val + val[i]
                 k_ryz = k_ryz + ris[i]
                 
-                fin = (k_val / k_ryz)*100 - ((udzwig-k_udz)+(gabaryt-k_gab)*150)
+                fin = (k_val / k_ryz)*100  - ((udzwig-k_udz)*(gabaryt-k_gab)*10)
 
-            if(udzwig < k_udz or gabaryt < k_gab):   
+            if(udzwig < k_udz or gabaryt <  k_gab):   
                 temp_min = min(HMV)
                 ind = HMV.index(temp_min)
                 

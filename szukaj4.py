@@ -14,7 +14,6 @@ HMV = []
 HMCR = 70
 #czas przez jaki będzie działał program 
 czas_dzialania = 5
-
 #tymczasowe tablice do transferu danych
 HM_temp = []
 HMV_temp = []
@@ -95,7 +94,7 @@ while i < hmSize:
             k_val = k_val + val[r]
             k_ryz = k_ryz + ris[r]
             
-            fin = (k_val / k_ryz)*100  - (gabaryt*udzwig*10)
+            fin = (k_val / k_ryz)*100  
             
             
             
@@ -176,6 +175,7 @@ while koniec!=True:
             i=0
             z=9999
             m=0
+            
             whm = []
             indexes = []
             
@@ -191,15 +191,15 @@ while koniec!=True:
             # m = maksymalna długoć
             # z = minimalna długoć
             
-            print("m = "+str(m))
-            print("z = "+str(z))
+           # print("m = "+str(m))
+           # print("z = "+str(z))
                 
             r_len = random.randint(z, m)
             for i in range(r_len):
                 indexes.append(i)
             #r_len to długoć pomiędzy tymi skrajnymi
-            print(str(r_len))
-            print(indexes)
+            #print(str(r_len))
+            #print(indexes)
             
             #problematyczny moment generowania rozwiazania z pamięci 
             #ustawnianie zmiennych
@@ -216,7 +216,7 @@ while koniec!=True:
                 except IndexError:
                     generowanie = False
                 try:
-                    print("HM["+ str(p%len(HM))+"][" + str(r_k) +"] = "+ str(HM[p%len(HM)][r_k]))
+                   # print("HM["+ str(p%len(HM))+"][" + str(r_k) +"] = "+ str(HM[p%len(HM)][r_k]))
                     if(HM[p%len(HM)][r_k] in HMI_TEST ):
                         print("POWTÓRKA 1 ")
                         break
@@ -229,7 +229,7 @@ while koniec!=True:
                         doskutku = True
                         while doskutku:
                             nr = random.randint(0,r_len)
-                            print("HM["+ str(p%len(HM))+"][" + str(nr) +"] = "+ str(HM[p%len(HM)][nr]))
+                            #print("HM["+ str(p%len(HM))+"][" + str(nr) +"] = "+ str(HM[p%len(HM)][nr]))
                             if(HM[p%len(HM)][nr] in HMI_TEST):
                                 print("POWTÓRKA 2 ")
                                 p=p+1
@@ -249,10 +249,11 @@ while koniec!=True:
                 if(len(indexes)==0):
                     print("Udało się!")
                     generowanie = False
-            print("test")
-            print(HMI_TEST)
+            #print("test")
+            #print(HMI_TEST)
             
-            
+            #udzwig = 50.0
+            #gabaryt = 50.0
             for i in HMI_TEST:
                 #print(i)
                 k_udz = k_udz + wei[i]
@@ -260,9 +261,12 @@ while koniec!=True:
                 k_val = k_val + val[i]
                 k_ryz = k_ryz + ris[i]
                 
-                fin = (k_val / k_ryz)*100  - ((udzwig-k_udz)*(gabaryt-k_gab)*10)
-
-            if(udzwig < k_udz or gabaryt <  k_gab):   
+                fin = (k_val / k_ryz)*100  
+            
+            print(k_udz)
+            print(k_gab)
+            print(fin)
+            if(udzwig > k_udz and gabaryt >  k_gab):   
                 temp_min = min(HMV)
                 ind = HMV.index(temp_min)
                 
@@ -270,7 +274,7 @@ while koniec!=True:
                     print("udzwig i gab")
                     print(k_udz)
                     print(k_gab)
-                    print("zamiana!")
+                    print("zamiana z pamięci!")
                     HMV[ind] = fin
                     HM[ind] = HMI_TEST
                     zamiana = False
@@ -287,6 +291,8 @@ while koniec!=True:
         
     else:
         print("Siła")
+        udzwig = 50.0
+        gabaryt = 50.0
         while dalej:
             r = random.randint(0, len(ids)-1)
             if r in ids2:
@@ -307,7 +313,7 @@ while koniec!=True:
                 k_val = k_val + val[r]
                 k_ryz = k_ryz + ris[r]
                 
-                fin = (k_val / k_ryz)*100  - (gabaryt*udzwig*10)
+                fin = (k_val / k_ryz)*100 
                 
                 
             else:
@@ -323,8 +329,11 @@ while koniec!=True:
             dalej = False
             
         else:
-            print("sila jescze raz!")
-            continue
+            print("brak zamiana sila")
+            #print("sila jescze raz!")
+            #continue
+            #break
+            dalej = False
         
 print(HMV_temp)
 print("- - - ")        

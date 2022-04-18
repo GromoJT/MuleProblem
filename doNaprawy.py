@@ -13,7 +13,7 @@ HMV = []
 #Procent szans na mutacje
 HMCR = 70
 #czas przez jaki będzie działał program 
-czas_dzialania = 5
+czas_dzialania = 0.001
 #tymczasowe tablice do transferu danych
 HM_temp = []
 HMV_temp = []
@@ -157,137 +157,37 @@ while koniec!=True:
     #pozycja decyzyjna czy program mutuje czy odwieża pulę 
     if(r_HMCR < HMCR):
         print("pamiec")
-        #ustawienie flagi mutacji tablicy 
-        zamiana = True
-        while zamiana:
-            #print("Z pamięci")
-            #print(str(HM[0][0]) + " = " + str(HMV[0]))
-           # print(str(len(HM))+" = len of HM")
-           
-            #ustawienie zmiennych do wyszukania optymalnego rozmiaru nowego rozwiazania
-            #--Jako że rozwiążania tworzone w poprzednim segmęcie niezawsze są jednakowej
-            #-- długoci. To należy znaleźć pewne rozwiażanie tego problemu.
-            #-- Ustawienie aby nowe rozwiazanie które skłąda się z już istniejących musiało być
-            #-- tak samo długie jak najmniejsze czy największe. Spowodowało by trudnoć z znalezieniem
-            #-- w puli optymalnych kombinacji.
-            #-- Dlatego postawilimy na slepy traf i długosć tego rozwiażania jest ograniczana 
-            #-- do wartoći pomiędzy tymi dwiema skrajnymi
-            i=0
-            z=9999
-            m=0
-            
-            whm = []
-            indexes = []
-            
-            while i < hmSize:
+        udzwig = 50.0
+        gabaryt = 50.0
+        max_row_size = 0S
+        index_tab = []
+        new_tap = []
+        new_HM_entry_test = []
+        
+        for i in range(len(HM)):
+            if len(HM[i])>max_row_size:
+                max_row_size=len(HM[i])
                 
-                #print(str(len(HM[i]))+" = len of HM["+str(i)+"]")
-                if len(HM[i]) < z:
-                    z = len(HM[i])
-                if len(HM[i]) > m:
-                    m = len(HM[i])
-                whm.append(len(HM[i]))
-                i=i+1
-            # m = maksymalna długoć
-            # z = minimalna długoć
-            
-           # print("m = "+str(m))
-           # print("z = "+str(z))
-                
-            r_len = random.randint(z, m)
-            for i in range(r_len):
-                indexes.append(i)
-            #r_len to długoć pomiędzy tymi skrajnymi
-            #print(str(r_len))
-            #print(indexes)
-            
-            #problematyczny moment generowania rozwiazania z pamięci 
-            #ustawnianie zmiennych
-            u=0
-            p=0
-            i=0
-            HMI_TEST = []
-            #pętla generowania nowego wyniku o ustalonej długoci z okrelonej choć zmiennej puli
-            generowanie = True
-            while generowanie:
-            
-                try:
-                    r_k = random.choice(indexes)
-                except IndexError:
-                    generowanie = False
-                try:
-                   # print("HM["+ str(p%len(HM))+"][" + str(r_k) +"] = "+ str(HM[p%len(HM)][r_k]))
-                    if(HM[p%len(HM)][r_k] in HMI_TEST ):
-                        print("POWTÓRKA 1 ")
-                        break
-                    else:
-                        HMI_TEST.append(HM[p%len(HM)][r_k])
-                        indexes.remove(r_k)
-                except IndexError:
-                    print("Error - procedura wyjątkowa")
-                    try:
-                        doskutku = True
-                        while doskutku:
-                            nr = random.randint(0,r_len)
-                            #print("HM["+ str(p%len(HM))+"][" + str(nr) +"] = "+ str(HM[p%len(HM)][nr]))
-                            if(HM[p%len(HM)][nr] in HMI_TEST):
-                                print("POWTÓRKA 2 ")
-                                p=p+1
-                                break
-                            else:
-                                HMI_TEST.append(HM[p%len(HM)][nr])
-                                
-                                try:
-                                    indexes.remove(r_k)
-                                except ValueError:
-                                    indexes.pop()
-                                doskutku = False
-                    except IndexError:
-                        continue
-                    continue
-                p=p+1
-                if(len(indexes)==0):
-                    print("Udało się!")
-                    generowanie = False
-            #print("test")
-            #print(HMI_TEST)
-            
-            #udzwig = 50.0
-            #gabaryt = 50.0
-            for i in HMI_TEST:
-                #print(i)
-                k_udz = k_udz + wei[i]
-                k_gab = k_gab + siz[i]
-                k_val = k_val + val[i]
-                k_ryz = k_ryz + ris[i]
-                
-                fin = (k_val / k_ryz)*100  
-            
-            print(k_udz)
-            print(k_gab)
-            print(fin)
-            if(udzwig > k_udz and gabaryt >  k_gab):   
-                temp_min = min(HMV)
-                ind = HMV.index(temp_min)
-                
-                if(fin>HMV[ind]):
-                    print("udzwig i gab")
-                    print(k_udz)
-                    print(k_gab)
-                    print("zamiana z pamięci!")
-                    HMV[ind] = fin
-                    HM[ind] = HMI_TEST
-                    zamiana = False
-                    break
+        print("Najdłuższy ma = " + str(max_row_size))
+        
+        row_count = 0
+        temp_index = 0
+        
+        for i in range(len(HM)):
+            for y in range(max_row_size):
+                if(y in range(len(HM[i]))):
+                   S
+                    temp_index=temp_index+1 
                 else:
-                    print("Braki zamiany1")
-                    break
-            else:
-                print("Braki zamiany2")
-                break
+                   temp_index=temp_index+1 
+            row_count=row_count+1
             
+                   
             
-            break                   
+                    
+
+                    
+                
         
     else:
         print("Siła")

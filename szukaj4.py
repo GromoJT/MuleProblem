@@ -13,7 +13,7 @@ HMV = []
 #Procent szans na mutacje
 HMCR = 70
 #czas przez jaki będzie działał program 
-czas_dzialania = 5
+czas_dzialania = 10
 #tymczasowe tablice do transferu danych
 HM_temp = []
 HMV_temp = []
